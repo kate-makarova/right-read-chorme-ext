@@ -29,15 +29,24 @@ var findWord = function (elem) {
     })
 }
 
-let selectors = document.querySelectorAll('*');
+let selectors = document.querySelectorAll('p');
+let node = document.createElement("div");
+node.setAttribute('id', 'rightread-container');
+node.style.display = 'none';
+document.body.appendChild(node);
 
 selectors.forEach(function (element) {
+    element.classList.add('rightread-p')
+
     element.onclick = function (e) {
         if (!e.target.classList.contains('rightread')) {
             e.preventDefault();
             e.stopPropagation();
-            console.log('here we go');
-            findWord(e.target);
+
+            node.innerText = element.innerText;
+            node.style.display = 'block';
+
+            findWord(document.getElementById('rightread-container'));
         }
     }
 });

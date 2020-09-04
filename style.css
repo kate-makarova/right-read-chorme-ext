@@ -1,0 +1,11 @@
+#rightread-container {
+    position: fixed;
+    top: 40%;
+    left: calc(15% - 10px);
+    width: 70%;
+    padding: 20px;
+    background: #fff;
+    border: 1px #333 solid;
+    box-shadow: 0 0 5px #222;
+    z-index: 100;
+}
